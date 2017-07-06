@@ -1,0 +1,14 @@
+{
+  "name": "lution-scrapper-module",
+  "version": "0.0.1",
+  "author": "Juan Gallo <juani.reicko@gmail.com>",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "cheerio": "~0.19.0",
+    "request": "^2.46.0"
+  }
+}
