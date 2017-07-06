@@ -1,6 +1,6 @@
 {
-  "name": "lution-scrapper-module",
-  "version": "0.0.1",
+  "name": "scrapper-module",
+  "version": "0.0.2",
   "author": "Juan Gallo <juani.reicko@gmail.com>",
   "license": "MIT",
   "main": "index.js",
