@@ -9,25 +9,29 @@ scrapper.scrape = scrape;
 
 module.exports = exports = scrapper;
 
-
 /**
  * @name scrape
  * @description scrape a website based on an url
  * @return {promise}
  */
-function scrape(url, model, opts) {
-  let startTime = Date.now(),
-    options = opts ? opts : {},
-    limit = options.limit ? options.limit : 10000;
-
-  return new Promise((resolve, reject) => {
-    request(url, (err, res, body) => {
-      if (err) { return reject(err) }
-      console.log('Time:', Date.now() - startTime);
-      resolve(parse(body, model, limit));
+function scrape(data) {
+  let options = {},
+    limit = options.limit ? options.limit : 10000,
+    promisesArray = [];
+  for (let i = 0; i < data.length; i++) {
+    var dataPromise = new Promise((resolve, reject) => {
+      request(data[i].url, (err, res, body) => {
+        if (err) { return reject(err) }
+        resolve(parse(body, data[i].model, limit));
+      });
     });
-  });
 
+    promisesArray.push(dataPromise);
+  }
+
+  Promise.all(promisesArray).then((data) => {
+    console.log(data);
+  });
 }
 
 /**
