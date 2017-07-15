@@ -1,6 +1,6 @@
 {
   "name": "scrapper-module",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "author": "Juan Gallo <juani.reicko@gmail.com>",
   "license": "MIT",
   "main": "index.js",
