@@ -16,7 +16,6 @@ module.exports = exports = scrapper;
  * @return {promise}
  */
 function scrape(data, cb) {
-  console.log(1);
   let options = {},
     limit = options.limit ? options.limit : 10000,
     promisesArray = [];
